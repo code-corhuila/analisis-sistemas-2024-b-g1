@@ -1,0 +1,15 @@
+@startuml
+
+class Persona{
+    - tipoDocumento: enum('CC', 'CE', 'TI', 'Pasaporte')
+    - numeroDocumento: string
+    - nombreCompleto: string
+    - direccion: string
+    - correo: string
+    - telefono: string
+}
+class Cliente extends Persona{
+    - codigo: string
+    - tipoSuscripcion: enum('Basica', 'Premium')
+}
+@enduml
