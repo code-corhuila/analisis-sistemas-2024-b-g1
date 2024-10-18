@@ -1,0 +1,32 @@
+@startuml
+
+class Persona{
+    - id : Long
+    - tipoDocumento : String
+    - numeroDocumento : String
+    - nombre : String
+    - apellido : String
+    - edad : Byte
+    - direccion : String
+    + Persona : Save(Persona persona)
+    + void : Update(Persona persona, Long id)
+    + List<Persona> : All()
+    + Optional<Persona> : FindById(Long id)
+    + void : Delete(Long id) 
+}
+
+class Usuario{
+    - usuario : String
+	- contrasenia : String
+    - personaId: Persona
+    + Usuario : Save(Usuario usuario)
+    + void : Update(Usuario usuario, Long id)
+    + List<Usuario> : All()
+    + Optional<Usuario> : FindById(Long id)
+    + void : Delete(Long id) 
+}
+
+Usuario *-- Persona
+		
+
+@enduml

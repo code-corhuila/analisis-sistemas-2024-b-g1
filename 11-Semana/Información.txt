@@ -1,0 +1,89 @@
+Seguridad
+	Persona
+		tipoDocumento
+		numeroDocumento		
+		nombre
+		apellido
+		edad
+		direccion
+	Usuario
+		usuario
+		contrasenia
+		personaId
+		
+Inventario
+	Categoria
+		codigo
+		nombre
+		descripcion
+	Producto
+		codigo
+		nombre
+		descripcion
+		categoriaId
+	Inventario
+		valorCompra
+		ValorVenta
+		stock
+		productoId
+Facturacion
+	Factura
+		fecha
+		valorBruto
+		valorNeto
+		valorIva
+		valorDescuento
+		usuarioId
+	DetalleFactura
+		valorBruto
+		valorNeto
+		porcentajeDescuento
+		cantidad
+		productoId
+		facturaId
+Proveedor
+	Empresa
+	Sucursal
+Ubicacion
+	Pais
+	Departamento
+	Ciudad
+Envio	
+	SeguimientoEnvio
+	
+	
+======================================================
+UML=> Lenguaje Unificado de Modelado
+	Diagramas estáticos
+	Diagrama dinámicos
+Diagrama de clases	
+	Nombre
+	Atributos
+	Métodos
+	Relaciones****
+	
+	Asociación simple
+	Agregación 
+	Composición
+	Herencia
+	Implementación
+	
+Visualización de atributos y métodos
+	package
+		privada: -
+		pública: +
+		protegida: #
+		
+Tipado de datos en diagrama de clases. 
+	Lenguajes de programación
+		Números
+		Cadena
+		Objeto
+
+Tipos de métodos 
+	void
+	return
+	paramétricos
+	no paramétricos
+
+		

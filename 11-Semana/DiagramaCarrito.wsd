@@ -1,0 +1,62 @@
+@startuml
+
+class 	Persona{
+    - tipoDocumento : String
+    - numeroDocumento : String
+    - nombre : String
+    - apellido : String
+    - edad : Byte
+    - direccion : String
+}
+		
+class Usuario{
+    - usuario : String
+	- contrasenia : String
+	- personaId : Persona
+}
+
+class Categoria{
+    - codigo : Strig
+	- nombre : Strig
+	- descripcion : Strig
+}
+
+class Producto{
+    - codigo : Strig
+	- nombre : Strig
+	- descripcion : Strig
+    - categoriaId : Categoria
+}
+
+class Inventario{
+    - valorCompra : BigDecimal
+	- ValorVenta : BigDecimal
+	- stock : Integer
+	- productoId : Producto
+}
+class Factura{
+    - fecha : LocalDateTime
+    - valorBruto : BigDecimal
+    - valorNeto : BigDecimal
+    - valorIva : BigDecimal
+    - valorDescuento : BigDecimal
+    - usuarioId : Usuario
+}
+
+class DetalleFactura{
+    - valorBruto : BigDecimal
+    - valorNeto : BigDecimal
+    - porcentajeDescuento : Double
+    - cantidad : Integer
+    - productoId : Producto
+    - facturaId : Factura
+}
+		
+
+Usuario o-- Persona
+Producto o-- Categoria
+Inventario *-- Producto
+Factura o-- Usuario
+DetalleFactura *-- Factura
+DetalleFactura *-- Producto
+@enduml
