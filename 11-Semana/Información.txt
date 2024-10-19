@@ -86,4 +86,32 @@ Tipos de métodos
 	paramétricos
 	no paramétricos
 
+Tipos de clases
+	Abstracta: 
+		* Implementar interfaces
+			* Implementación los metodos. 
+			* No implementación los metodos.
+		* Extends hacia una clase. Se puede heredar una única clase.
+		* Implements hacia un interfez. Se puede implementar una o más.
+		* No permite la cración de objeto de esta. Es decir, no se puede instanciar. 
+	Implementada
+		* Implementar interfaces
+			* Implementación los metodos. 
+		* Extends hacia una clase. Se puede heredar una única clase.
+		* Implements hacia un interfez. Se puede implementar una o más.
+		* Permite la cración de objeto de esta. Es decir, se puede instanciar. 
+	Interfaz
+		* Define los métodos, no los realiza. 
+		* Define los métodos, se puede ralizar, sin embargo esto métodos serían staic. Lo cual significa que no permitiría el pilar polimorfísmo. 
+	Anotacion
+	Enumerador
+
+=================
+- createdAt : LocalDateTime
+- updatedAt : LocalDateTime
+- deletedAt : LocalDateTime
+- createdBy : Long
+- updatedBy : Long
+- deletedBy : Long
+- state : Boolean
 		

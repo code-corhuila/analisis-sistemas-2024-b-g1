@@ -1,0 +1,87 @@
+@startuml
+
+interface CRUD{
+    + Entity : Save(Entity entity)
+    + void : Update(Entity entity, Long id)
+    + List<Entity> : All()
+    + Optional<Entity> : FindById(Long id)
+    + void : Delete(Long id) 
+}
+
+abstract class Auditoria implements CRUD{
+    - createdAt : LocalDateTime
+    - updatedAt : LocalDateTime
+    - deletedAt : LocalDateTime
+    - createdBy : Long
+    - updatedBy : Long
+    - deletedBy : Long
+    - state : Boolean
+}
+class PersonaI extends Auditoria{}
+class UsuarioI extends Auditoria{}
+class CategoriaI extends Auditoria{}
+class ProductoI extends Auditoria{}
+class InventarioI extends Auditoria{}
+class FacturaI extends Auditoria{}
+class DetalleFacturaI extends Auditoria{}
+
+class Persona{
+    - tipoDocumento : String
+    - numeroDocumento : String
+    - nombre : String
+    - apellido : String
+    - edad : Byte
+    - direccion : String
+}
+		
+class Usuario{
+    - usuario : String
+	- contrasenia : String
+	- personaId : Persona
+}
+
+class Categoria{
+    - codigo : Strig
+	- nombre : Strig
+	- descripcion : Strig
+}
+
+class Producto{
+    - codigo : Strig
+	- nombre : Strig
+	- descripcion : Strig
+    - categoriaId : Categoria
+}
+
+class Inventario{
+    - valorCompra : BigDecimal
+	- ValorVenta : BigDecimal
+	- stock : Integer
+	- productoId : Producto
+}
+class Factura{
+    - fecha : LocalDateTime
+    - valorBruto : BigDecimal
+    - valorNeto : BigDecimal
+    - valorIva : BigDecimal
+    - valorDescuento : BigDecimal
+    - usuarioId : Usuario
+}
+
+class DetalleFactura{
+    - valorBruto : BigDecimal
+    - valorNeto : BigDecimal
+    - porcentajeDescuento : Double
+    - cantidad : Integer
+    - productoId : Producto
+    - facturaId : Factura
+}
+		
+
+Usuario o-- Persona
+Producto o-- Categoria
+Inventario *-- Producto
+Factura o-- Usuario
+DetalleFactura *-- Factura
+DetalleFactura *-- Producto
+@enduml
