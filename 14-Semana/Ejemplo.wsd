@@ -1,0 +1,26 @@
+@startuml
+interface CRUD{
+    save() : void
+    update() : void
+    findAll() : void
+    findById() : void
+    delete() : void
+}
+abstract class ABaseEntity implements CRUD{
+    - createdAt : LocalDateTime
+    - updatedAt : LocalDateTime
+    - deletedAt : LocalDateTime
+    - state : Boolean
+}
+class Persona extends ABaseEntity{
+    - nombre : String
+    - apellido : String
+    - direccion : String
+}
+class Usuario extends ABaseEntity{
+    - correo : String
+    - contrasenia : String
+    - personaId : Persona 
+}
+Usuario *-- Persona
+@enduml

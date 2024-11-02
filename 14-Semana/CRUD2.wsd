@@ -1,0 +1,11 @@
+@startuml
+
+interface CRUD{
+    save() : T
+    update() : void
+    findAll() : List<T>
+    findBiId() : Optional<T>
+    delete() : void
+}
+
+@enduml

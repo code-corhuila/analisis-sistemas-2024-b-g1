@@ -1,0 +1,11 @@
+@startuml
+
+interface CRUD{
+    save(Entity entity) : Entity
+    update(Entity entity, Long id) : void
+    findAll() : List<Entity>
+    findBiId(Long id) : Optional<Entity>
+    delete(Long id) : void
+}
+
+@enduml
